@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { ArrowRightIcon } from 'react-native-heroicons/outline'
 import RestaurantCard from './RestaurantCard';
-import sanityClient from '../screens/sanity';
+import sanityClient from '../sanity'
 
 const FeaturedRow = ({ id, title, description }) => {
   const [restaurants, setRestaurants] = useState([]) 
@@ -32,11 +32,11 @@ const FeaturedRow = ({ id, title, description }) => {
   return (
     <View>
       <View className="flex-row items-center justify-between px-4 mt-4">
-        <Text className="font-bold text-lg">{title}</Text>
+        <Text className="font-bold text-lg">{title}sd</Text>
         <ArrowRightIcon color="#00ccbb" />
       </View>
 
-      <Text className="text-xs text-gray-500 px-4">{description}</Text>
+      <Text className="text-xs text-gray-500 px-4">{description}asd</Text>
 
       <ScrollView
         contentContainerStyle={{
