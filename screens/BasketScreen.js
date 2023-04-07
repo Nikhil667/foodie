@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRestaurant } from '../features/restaurantSlice';
-import { removeFromBasket, selectBasketItems } from '../features/basketSlice';
+import { removeFromBasket, selectBasketItems, selectBasketTotal } from '../features/basketSlice';
 import { XCircleIcon } from 'react-native-heroicons/solid'
 import { urlFor } from '../sanity';
 import { formatCurrency } from '../utilities/formatCurrency';
@@ -12,6 +12,7 @@ const BasketScreen = () => {
     const navigation = useNavigation();
     const restaurant = useSelector(selectRestaurant);
     const items = useSelector(selectBasketItems);
+    const totalBasket = useSelector(selectBasketTotal)
     const dispatch = useDispatch();
     const [groupedItemBasket, setGroupedItemBasket] = useState([])
 
@@ -77,6 +78,25 @@ const BasketScreen = () => {
             </View>
           ))}
         </ScrollView>
+        <View className="p-5 bg-white mt-5 space-y-4">
+          <View className='flex-row justify-between'>
+            <Text className="text-gray-400">Subtotal</Text>
+            <Text className="text-gray-400">{ formatCurrency(totalBasket) }</Text>
+          </View>
+          <View className='flex-row justify-between'>
+            <Text className="text-gray-400">Delivery Fee</Text>
+            <Text className="text-gray-400">{ formatCurrency(30) }</Text>
+          </View>
+          <View className='flex-row justify-between'>
+            <Text>Order Total</Text>
+            <Text className="font-extrabold">{ formatCurrency(totalBasket + 30) }</Text>
+          </View>
+          <TouchableOpacity 
+            onPress={() => navigation.navigate("PreparingScreen")}
+            className="rounded-lg bg-[#00ccbb] p-4">
+            <Text className="text-center text-white text-lg font-bold">Place Order</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   )

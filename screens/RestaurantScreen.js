@@ -90,7 +90,9 @@ const RestaurantScreen = () => {
             </View>
             <Text className="text-gray-500 mt-2 pb-4">{short_description}</Text>
         </View>
-        <TouchableOpacity className="flex-row space-x-2 items-center p-4 border-y border-gray-300">
+        <TouchableOpacity 
+            onPress={() => navigation.navigate("AllergyScreen")}
+            className="flex-row space-x-2 items-center p-4 border-y border-gray-300">
             <QuestionMarkCircleIcon color="gray" opacity={0.6} size={20}/>
             <Text className="flex-1 pl-2 text-sm font-bold">
                 Have a food allergy?
