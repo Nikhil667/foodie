@@ -32,11 +32,11 @@ const FeaturedRow = ({ id, title, description }) => {
   return (
     <View>
       <View className="flex-row items-center justify-between px-4 mt-4">
-        <Text className="font-bold text-lg">{title}sd</Text>
+        <Text className="font-bold text-lg">{title}</Text>
         <ArrowRightIcon color="#00ccbb" />
       </View>
 
-      <Text className="text-xs text-gray-500 px-4">{description}asd</Text>
+      <Text className="text-xs text-gray-500 px-4">{description}</Text>
 
       <ScrollView
         contentContainerStyle={{
@@ -63,43 +63,6 @@ const FeaturedRow = ({ id, title, description }) => {
           lat={item.lat}
       />
         ))}
-
-        {/* <RestaurantCard
-            id={1234}
-            imgUrl="https://links.papareact.com/gn7"
-            title="Yo Sushi!"
-            rating={4.5}
-            genre="Japanese"
-            address="Sagar Pur"
-            short_description="This is test description"
-            dishes={[]}
-            long={20}
-            lat={0}
-        />
-        <RestaurantCard
-            id={1234}
-            imgUrl="https://links.papareact.com/gn7"
-            title="Yo Sushi!"
-            rating={4.5}
-            genre="Japanese"
-            address="Sagar Pur"
-            short_description="This is test description"
-            dishes={[]}
-            long={20}
-            lat={0}
-        />
-        <RestaurantCard
-            id={1234}
-            imgUrl="https://links.papareact.com/gn7"
-            title="Yo Sushi!"
-            rating={4.5}
-            genre="Japanese"
-            address="Sagar Pur"
-            short_description="This is test description"
-            dishes={[]}
-            long={20}
-            lat={0}
-        /> */}
       </ScrollView>
     </View>
   );

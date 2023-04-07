@@ -56,8 +56,10 @@ const RestaurantCard = ({
           className="flex-row items-center space-x-1"
         >
           <MapPinIcon color="gray" opacity={0.4} size={22} />
-          <Text className="text-xs text-gray-500">
-            Nearby · {address}
+          <Text  className="text-xs text-gray-500">
+            Nearby · {address.length < 25
+                ? `${address}`
+                : `${address.substring(0, 24)}...`}
           </Text>
         </View>
       </View>

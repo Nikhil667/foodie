@@ -33,13 +33,6 @@ const Categories = () => {
          imgUrl={urlFor(item.image).url()}
          title={item.name}/>
       ))}
-      {/* <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/>
-      <CategoryCard imgUrl="https://links.papareact.com/gn7" title="testing"/> */}
     </ScrollView>
   )
 }
