@@ -2,7 +2,9 @@ import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'rea
 import React, { useLayoutEffect } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { urlFor } from '../sanity'
-import { ArrowLeftIcon, MapPinIcon, StarIcon } from 'react-native-heroicons/solid'
+import { ArrowLeftIcon, ChevronRightIcon, MapPinIcon, StarIcon } from 'react-native-heroicons/solid'
+import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline'
+import DishRow from '../components/DishRow'
 
 const RestaurantScreen = () => {
 
@@ -55,6 +57,7 @@ const RestaurantScreen = () => {
                         <Text className="text-green-500">{rating}</Text> · {genre}
                     </Text>
                 </View>
+
                 <View className="flex-row items-center space-x-1">
                     <MapPinIcon color="gray" opacity={0.4} size={22}/>
                     <Text className="text-xs text-gray-500">
@@ -62,7 +65,31 @@ const RestaurantScreen = () => {
                     </Text>
                 </View>
             </View>
+            <Text className="text-gray-500 mt-2 pb-4">{short_description}</Text>
         </View>
+        <TouchableOpacity className="flex-row space-x-2 items-center p-4 border-y border-gray-300">
+            <QuestionMarkCircleIcon color="gray" opacity={0.6} size={20}/>
+            <Text className="flex-1 pl-2 text-sm font-bold">
+                Have a food allergy?
+            </Text>
+            <ChevronRightIcon color="#00ccbb" />
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text className="pt-6 px-4 mb-3 font-bold text-xl">
+            Menu
+        </Text>
+        {/* dishes row */}
+        {dishes.map((item) => (
+            <DishRow
+                key={item._id}
+                id={item._id}
+                name={item.name}
+                description={item.short_description}
+                price={item.price}
+                image={item.image}
+            />
+        ))}
       </View>
     </ScrollView>
   )
