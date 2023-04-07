@@ -31,7 +31,8 @@ const RestaurantScreen = () => {
     } = useRoute();
 
     useEffect(() => {
-        dispatch(setRestaurant({
+        dispatch(
+            setRestaurant({
             id,
             imgUrl,
             title,
@@ -43,7 +44,7 @@ const RestaurantScreen = () => {
             long,
             lat,
         }))
-    }, [])
+    }, [dispatch])
 
     useLayoutEffect(()=>{
         navigation.setOptions({
